@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050507" />
+  <title>Affiliate Program — Stack</title>
+  <meta name="description" content="Join the Stack affiliate program. Earn 15% commission on every subscription you refer through your custom link." />
+  <link rel="icon" type="image/png" href="assets/stackicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__icon"><img src="assets/stackicon.png" alt="Stack" /></span>
+        <span>Stack</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#showcase">App</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="affiliate.html">Affiliates</a>
+      </div>
+      <div class="nav__cta">
+        <a href="index.html#pricing" class="btn btn--ghost">Pricing</a>
+        <a href="index.html#download" class="btn btn--primary">Download</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="affiliate-hero">
+    <div class="affiliate-hero__bg"></div>
+    <div class="affiliate-hero__content reveal">
+      <span class="eyebrow"><span class="dot"></span> Affiliate Program</span>
+      <h1>Get paid to share what <span class="gradient-text">actually works</span>.</h1>
+      <p>Earn 15% recurring commission on every subscription that comes through your custom Stack link. Built for coaches, creators, biohackers, and clinicians who care about results.</p>
+    </div>
+  </section>
+
+  <!-- Perks -->
+  <section class="affiliate-perks">
+    <div class="container">
+      <div class="affiliate-perks__grid">
+        <div class="perk reveal">
+          <div class="big">15%</div>
+          <h4>Recurring commission</h4>
+          <p>Earn on every payment your referrals make through your custom link — weekly or yearly.</p>
+        </div>
+        <div class="perk reveal">
+          <div class="big">60d</div>
+          <h4>Cookie window</h4>
+          <p>Your custom link credits you for any sign-up within 60 days of the first click.</p>
+        </div>
+        <div class="perk reveal">
+          <div class="big">$0</div>
+          <h4>No minimum payouts</h4>
+          <p>Paid monthly via PayPal or Stripe — no hidden fees, no waiting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application form -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-card reveal">
+        <h2>Affiliate Application</h2>
+        <p>Tell us about your audience and how you'd promote Stack. We review every application within 3 business days.</p>
+
+        <form id="affiliateForm" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" placeholder="Alex" required />
+            </div>
+            <div class="form-field">
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" placeholder="Rivera" required />
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@domain.com" required />
+            </div>
+            <div class="form-field">
+              <label for="country">Country</label>
+              <input id="country" name="country" type="text" placeholder="United States" required />
+            </div>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="website">Primary website, channel, or profile URL</label>
+            <input id="website" name="website" type="url" placeholder="https://instagram.com/yourhandle" required />
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="platform">Main platform</label>
+              <select id="platform" name="platform" required>
+                <option value="">Select…</option>
+                <option>Instagram</option>
+                <option>YouTube</option>
+                <option>TikTok</option>
+                <option>X / Twitter</option>
+                <option>Substack / Newsletter</option>
+                <option>Blog / Website</option>
+                <option>Podcast</option>
+                <option>Clinic / Practice</option>
+                <option>Coaching</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="audience">Audience size</label>
+              <select id="audience" name="audience" required>
+                <option value="">Select…</option>
+                <option>Under 1,000</option>
+                <option>1,000 – 10,000</option>
+                <option>10,000 – 50,000</option>
+                <option>50,000 – 250,000</option>
+                <option>250,000 +</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="niche">Your niche</label>
+            <input id="niche" name="niche" type="text" placeholder="Peptides, biohacking, longevity, fitness, hormone optimization…" />
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="why">How will you promote Stack?</label>
+            <textarea id="why" name="why" placeholder="Tell us about your audience, content style, and how Stack fits in." required></textarea>
+          </div>
+
+          <label class="form-check">
+            <input type="checkbox" id="agree" name="agree" required />
+            <span>I have read and agree to the <a href="terms.html" style="color:#22d3ee;text-decoration:underline;">Terms of Service</a> and <a href="privacy.html" style="color:#22d3ee;text-decoration:underline;">Privacy Policy</a>, and confirm my promotional content will comply with FTC disclosure requirements.</span>
+          </label>
+
+          <button type="submit" class="form-submit">Submit application</button>
+
+          <div id="formSuccess" class="form-success">
+            Application received. We'll be in touch within 3 business days at the email you provided.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="brand">
+            <span class="brand__icon"><img src="assets/stackicon.png" alt="Stack" /></span>
+            <span>Stack</span>
+          </a>
+          <p>Peptide tracking and analytics. Engineered for precision.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#download">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="affiliate.html">Affiliate Program</a></li>
+            <li><a href="mailto:affiliates@stackapp.io">Affiliate Support</a></li>
+            <li><a href="mailto:support@stackapp.io">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>© <span id="year"></span> Stack. All rights reserved.</div>
+        <div class="footer__legal">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="affiliate.html">Affiliates</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
