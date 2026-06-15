@@ -18,7 +18,7 @@ Static HTML / CSS / vanilla JS. No build step. Hosts anywhere.
 |---|---|
 | Home | `index.html` |
 | Privacy Policy | `privacy.html` |
-| Terms of Service | `terms.html` |
+| Terms of Use | `terms.html` |
 | Affiliate Program | `affiliate.html` |
 
 ## Local preview
@@ -34,7 +34,7 @@ python3 -m http.server 8000
 .
 ├── index.html          Landing page (hero, features, showcase, pricing, CTA)
 ├── privacy.html        Privacy Policy
-├── terms.html          Terms of Service
+├── terms.html          Terms of Use
 ├── affiliate.html      Affiliate program + application form
 ├── styles.css          Shared styles (dark, brand-gradient theme)
 ├── script.js           Nav, reveal-on-scroll, mobile menu, form handler
