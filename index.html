@@ -14,7 +14,7 @@
   <meta property="og:description" content="Track your peptide stack, dial in your protocol, and own your transformation. iOS." />
   <meta property="og:image" content="https://www.whatsyourstack.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="800" />
+  <meta property="og:image:height" content="675" />
   <meta property="og:image:alt" content="Stack — Stack your protocol. Track your transformation. Peptide tracking & analytics for iOS." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://www.whatsyourstack.app/" />
@@ -57,61 +57,174 @@
     </div>
   </nav>
 
-  <!-- ============== HERO ============== -->
+  <!-- ============== HERO / PEPTIDE CASE ============== -->
   <header class="hero">
     <div class="hero__bg"></div>
     <div class="hero__glow"></div>
     <div class="hero__glow hero__glow--2"></div>
 
-    <div class="container hero__grid">
-      <div class="hero__content">
-        <span class="eyebrow"><span class="dot"></span> Now available on iOS</span>
-        <h1>
-          Stack your protocol.
-          <br/>
-          <span class="gradient-text">Track your transformation.</span>
-        </h1>
-        <p class="hero__sub">
-          The all-in-one peptide tracker for serious protocols. Smart reconstitution,
-          stack scheduling, body analytics, and nutrition — all in one beautifully
-          engineered iOS app.
-        </p>
+    <div class="container hero__inner">
+      <span class="eyebrow"><span class="dot"></span> Now available on iOS</span>
+      <h1 class="hero__title">What's Your <span class="gradient-text">Stack</span>?</h1>
+      <p class="hero__sub">
+        Open the case. Every vial is a piece of the app — hover one to see it in action.
+      </p>
 
-        <div class="hero__cta">
-          <a href="https://apps.apple.com/us/app/stack-peptide-tracker/id6773488687" class="btn btn--apple btn--large" target="_blank" rel="noopener" aria-label="Download on the App Store">
-            <svg class="apple-icon" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM256.3 90.5c30.4-36.1 27.7-69 26.8-80.5-27 1.6-58.2 18.4-76 39.1-19.6 22.2-31.1 49.7-28.6 79.5 29.2 2.2 55.9-12.8 77.8-38.1z"/>
-            </svg>
-            <span class="label">
-              <span class="small">Download on the</span>
-              <span class="big">App Store</span>
-            </span>
-          </a>
-          <a href="#features" class="btn btn--ghost btn--large">See what's inside</a>
+      <!-- ===== The case ===== -->
+      <div class="case" id="case" data-open="false">
+        <div class="case__stage">
+
+          <!-- Lid: flips back to become the display board -->
+          <div class="case__lid">
+            <div class="case__lid-face case__lid-face--out">
+              <div class="case__emboss">
+                <img src="assets/stackicon.png" alt="" aria-hidden="true" />
+                <span>STACK</span>
+              </div>
+              <div class="case__hint">8 vials inside</div>
+            </div>
+
+            <div class="case__lid-face case__lid-face--in">
+              <!-- Idle prompt -->
+              <div class="case__idle" data-panel="idle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M9 3h6v3l-1 1v3.2l4.2 8.1A2 2 0 0 1 16.4 21H7.6a2 2 0 0 1-1.8-2.7L10 10.2V7L9 6V3z" stroke-linejoin="round"/>
+                </svg>
+                <p>Hover a vial to see what it does</p>
+              </div>
+
+              <!-- Detail panel, populated on hover -->
+              <div class="case__detail" data-panel="detail" aria-live="polite">
+                <div class="case__detail-media">
+                  <div class="case__phone">
+                    <img id="detailShot" src="" alt="" />
+                  </div>
+                  <div class="case__glyph" id="detailGlyph" aria-hidden="true"></div>
+                </div>
+                <div class="case__detail-text">
+                  <span class="case__detail-eyebrow" id="detailEyebrow"></span>
+                  <h3 id="detailTitle"></h3>
+                  <p id="detailBody"></p>
+                  <ul class="case__detail-list" id="detailList"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tray -->
+          <div class="case__tray">
+            <div class="case__foam" role="group" aria-label="Peptide vials — hover to preview app features">
+
+              <button class="vial" type="button" data-vial style="--v:#6366f1"
+                data-eyebrow="Your Stack" data-title="The case, in your pocket"
+                data-body="Your active protocols live in a virtual case. Tap any vial to chart its active levels, see what's due, and log a dose in seconds."
+                data-list="Live calendar of logged &amp; missed days|Next-dose countdown|Daily streak tracking"
+                data-shot="assets/screen-stack.png" data-alt="Stack home screen showing a case of vials and a monthly schedule">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Stack</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#10b981"
+                data-eyebrow="Injection Sites" data-title="Rotate without guessing"
+                data-body="An interactive body map remembers where you last injected and suggests the next site, so no area gets overworked."
+                data-list="Front &amp; back body map|Unused / ready / resting states|Automatic next-site suggestion"
+                data-shot="assets/screen-body.png" data-alt="Body screen with a highlighted anatomical map for injection site rotation">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Body</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#8b5cf6"
+                data-eyebrow="Metrics" data-title="Your data. Your progress."
+                data-body="Stack pulls weight, HRV, resting heart rate, sleep, VO₂ max and more straight from Apple Health and charts them against your protocol."
+                data-list="12+ synced health metrics|Mood &amp; side-effect check-ins|Trends over any date range"
+                data-shot="assets/screen-metrics.png" data-alt="Metrics screen showing weight, resting heart rate, HRV and step data">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Metrics</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#f59e0b"
+                data-eyebrow="Nutrition" data-title="Peptides don't work alone"
+                data-body="Snap a photo of your meal to estimate macros, track hydration, and earn XP as you stay consistent with the protocol."
+                data-list="AI meal scan for macros|Water intake logging|Levels, XP &amp; achievement badges"
+                data-shot="assets/screen-profile.png" data-alt="Profile screen with nutrition rings, macros and water intake tracking">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Fuel</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#f43f5e"
+                data-eyebrow="Widget Studio" data-title="Your next dose, on the home screen"
+                data-body="Build your own widget. Choose the countdown, dose time, amount or vial level — then point it at a specific protocol or whatever is due next."
+                data-list="Small &amp; medium widget sizes|Four display modes|Pin any protocol you want"
+                data-shot="assets/screen-widget.png" data-alt="Widget Studio screen for configuring a home screen dose countdown widget">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Widget</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#14b8a6"
+                data-eyebrow="Reconstitution" data-title="Mix it right the first time"
+                data-body="Enter vial amount, diluent volume and target dose — Stack returns the exact mL or insulin-syringe units to draw."
+                data-list="Works with 0.3, 0.5 &amp; 1 mL syringes|Live concentration math|Step-by-step walkthrough"
+                data-glyph="calculator">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Recon</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#06b6d4"
+                data-eyebrow="Vial Tracking" data-title="Know what's left"
+                data-body="Set how much each vial holds and watch it deplete with every logged dose. A tap-to-flip ring shows exactly how much remains."
+                data-list="Automatic depletion per dose|One-tap refill|Low-vial warnings before you run out"
+                data-glyph="vial">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Vials</span>
+              </button>
+
+              <button class="vial" type="button" data-vial style="--v:#ec4899"
+                data-eyebrow="Privacy" data-title="Your protocol stays yours"
+                data-body="Your log is personal. Stack keeps your data encrypted and under your control — no ads, no data selling, ever."
+                data-list="Encrypted health data|No ads, no third-party selling|Export or delete at any time"
+                data-glyph="lock">
+                <span class="vial__cap"></span><span class="vial__glass"><span class="vial__fluid"></span></span>
+                <span class="vial__label">Private</span>
+              </button>
+
+            </div>
+            <div class="case__latch" aria-hidden="true"><span></span><span></span></div>
+          </div>
         </div>
 
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <div class="num">600+</div>
-            <div class="label">Compounds</div>
-          </div>
-          <div class="hero__stat">
-            <div class="num">AES-256</div>
-            <div class="label">Encrypted</div>
-          </div>
-          <div class="hero__stat">
-            <div class="num">100%</div>
-            <div class="label">On-Device</div>
-          </div>
-        </div>
+        <button class="case__toggle btn btn--primary btn--large" id="caseToggle" aria-expanded="false" aria-controls="case">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a5 5 0 0 1 10 0v2" stroke-linecap="round"/>
+          </svg>
+          <span>Open case</span>
+        </button>
       </div>
 
-      <div class="hero__phone">
-        <div class="phone">
-          <div class="phone__glow"></div>
-          <div class="phone__screen">
-            <img src="assets/screen-home.png" alt="Stack app home screen with day streak, calendar, and stack tracking" />
-          </div>
+      <div class="hero__cta">
+        <a href="https://apps.apple.com/us/app/stack-peptide-tracker/id6773488687" class="btn btn--apple btn--large" target="_blank" rel="noopener" aria-label="Download on the App Store">
+          <svg class="apple-icon" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM256.3 90.5c30.4-36.1 27.7-69 26.8-80.5-27 1.6-58.2 18.4-76 39.1-19.6 22.2-31.1 49.7-28.6 79.5 29.2 2.2 55.9-12.8 77.8-38.1z"/>
+          </svg>
+          <span class="label">
+            <span class="small">Download on the</span>
+            <span class="big">App Store</span>
+          </span>
+        </a>
+        <a href="#features" class="btn btn--ghost btn--large">See what's inside</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="num">600+</div>
+          <div class="label">Compounds</div>
+        </div>
+        <div class="hero__stat">
+          <div class="num">Apple Health</div>
+          <div class="label">Synced</div>
+        </div>
+        <div class="hero__stat">
+          <div class="num">18+</div>
+          <div class="label">Adults only</div>
         </div>
       </div>
     </div>
@@ -210,9 +323,9 @@
 
         <div class="showcase__row reveal">
           <div class="showcase__text">
-            <span class="eyebrow"><span class="dot"></span> Your dashboard</span>
+            <span class="eyebrow"><span class="dot"></span> Your case</span>
             <h2>Every protocol, <span class="gradient-text">at a glance</span>.</h2>
-            <p>The home screen is your command center. See active stacks, today's doses, your streak, and tomorrow's schedule — without ever leaving the dashboard.</p>
+            <p>Your home screen is a case of vials. See what's due, tap any vial to chart its active levels, and log a dose in seconds — without digging through menus.</p>
             <ul class="showcase__list">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -220,11 +333,11 @@
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Day streak counter to keep you on protocol
+                Morning, midday, and evening dose groups
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Quick-add doses from any screen with a single tap
+                Day streak counter to keep you on protocol
               </li>
             </ul>
           </div>
@@ -232,7 +345,7 @@
             <div class="phone">
               <div class="phone__glow"></div>
               <div class="phone__screen">
-                <img src="assets/screen-home.png" alt="Stack dashboard with calendar and stacks" />
+                <img src="assets/screen-stack.png" alt="Stack home screen with a case of vials and a monthly dose calendar" loading="lazy" />
               </div>
             </div>
           </div>
@@ -240,21 +353,21 @@
 
         <div class="showcase__row showcase__row--reverse reveal">
           <div class="showcase__text">
-            <span class="eyebrow"><span class="dot"></span> Reconstitution calculator</span>
-            <h2>Reconstitute like a <span class="gradient-text">pharmacist</span>.</h2>
-            <p>Stop guessing. Stack's calculator visualizes every draw against an actual syringe — so you hit your dose exactly, every time. Built for 0.3, 0.5, and 1 mL insulin syringes.</p>
+            <span class="eyebrow"><span class="dot"></span> Injection site rotation</span>
+            <h2>Never hit the same spot <span class="gradient-text">twice</span>.</h2>
+            <p>An interactive body map tracks every site you've used and how long it's been resting — then suggests where to go next. Front and back, fully mapped.</p>
             <ul class="showcase__list">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Auto concentration, draw volume, and unit calculations
+                Unused, ready, and resting states per site
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Step-by-step reconstitution walkthrough
+                One-tap "suggest next site"
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Track active vials and remaining doses
+                Full history of your last shots
               </li>
             </ul>
           </div>
@@ -262,7 +375,7 @@
             <div class="phone">
               <div class="phone__glow"></div>
               <div class="phone__screen">
-                <img src="assets/screen-reconstitution.png" alt="Reconstitution calculator with syringe visualization" />
+                <img src="assets/screen-body.png" alt="Body screen with an interactive anatomical map for injection site rotation" loading="lazy" />
               </div>
             </div>
           </div>
@@ -270,21 +383,21 @@
 
         <div class="showcase__row reveal">
           <div class="showcase__text">
-            <span class="eyebrow"><span class="dot"></span> Full body analytics</span>
+            <span class="eyebrow"><span class="dot"></span> Metrics &amp; Apple Health</span>
             <h2>Peptides don't work in <span class="gradient-text">a vacuum</span>.</h2>
-            <p>Nutrition, hydration, weight, and recovery — every variable matters. Stack ties macros, water, and body composition to your protocol so you can correlate inputs with results.</p>
+            <p>Weight, HRV, resting heart rate, sleep, body fat, VO₂ max — Stack pulls it straight from Apple Health and lines it up against your protocol so you can see what's actually moving.</p>
             <ul class="showcase__list">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Calorie, protein, fat, and carb tracking with meal scan
+                12+ health metrics synced automatically
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Hydration goals and one-tap logging
+                Mood and side-effect check-ins alongside doses
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="m5 12 5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Home screen widgets for your next dose & active protocols
+                Progress photos with side-by-side compare
               </li>
             </ul>
           </div>
@@ -292,7 +405,7 @@
             <div class="phone">
               <div class="phone__glow"></div>
               <div class="phone__screen">
-                <img src="assets/screen-profile.png" alt="Profile screen showing nutrition, hydration, and body analytics" />
+                <img src="assets/screen-metrics.png" alt="Metrics screen showing weight, resting heart rate, HRV, and Apple Health data" loading="lazy" />
               </div>
             </div>
           </div>
